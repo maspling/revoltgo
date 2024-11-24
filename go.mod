@@ -1,4 +1,4 @@
-module github.com/sentinelb51/revoltgo
+module github.com/maspling/revoltgo
 
 go 1.22
 
