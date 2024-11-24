@@ -1,3 +1,7 @@
+## Fork? Why?
+
+1. Wanted to use towards a selfhosted server, so added SetBaseUrl() to endpoints.go
+2. Don't really agree with abstracting away the updated events, so will make them distinct again.
 
 ## Support server
 

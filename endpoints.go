@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-const (
+var (
 	apiURL = "https://api.revolt.chat"
 	cdnURL = "https://autumn.revolt.chat/%s/%s"
 
@@ -64,6 +64,67 @@ const (
 
 	URLPush = apiURL + "/push/%s"
 )
+
+
+func SetBaseUrl(api, cdn string) {
+	apiURL = api
+	cdnURL = cdn + "/%s/%s"
+	URLUsersUsername = apiURL + "/users/me/username"
+
+	URLUsers = apiURL + "/users/%s"
+	URLUsersMutual = URLUsers + "/mutual"
+	URLUsersDM = URLUsers + "/dm"
+	URLUsersFlags = URLUsers + "/flags"
+	URLUsersFriend = URLUsers + "/friend"
+	URLUsersBlock = URLUsers + "/block"
+	URLUsersProfile = URLUsers + "/profile"
+	URLUsersRelationships = URLUsers + "/relationships"
+
+	URLUsersDefaultAvatar = URLUsers + "/default_avatar"
+
+	URLServers = apiURL + "/servers/%s"
+	URLServersAck = URLServers + "/ack"
+	URLServersChannels = URLServers + "/channels"
+	URLServersMembers = URLServers + "/members"
+	URLServersMember = URLServersMembers + "/%s"
+	URLServersBans = URLServers + "/bans"
+	URLServersBan = URLServersBans + "/%s"
+	URLServersRoles = URLServers + "/roles"
+	URLServersRole = URLServers + "/roles/%s"
+
+	URLServersPermissions = URLServers + "/permissions/%s"
+
+	URLChannels = apiURL + "/channels/%s"
+	URLChannelAckMessage = URLChannels + "/ack/%s"
+	URLChannelsMessages = URLChannels + "/messages"
+	URLChannelsMessage = URLChannelsMessages + "/%s"
+	URLChannelsMessageReactions = URLChannelsMessage + "/reactions"
+	URLChannelMessageReaction = URLChannelsMessageReactions + "/%s"
+	URLChannelsTyping = URLChannels + "/typing"
+	URLChannelsInvites = URLChannels + "/invites"
+	URLChannelsInvite = URLChannelsInvites + "/%s"
+	URLChannelsPermissions = URLChannels + "/permissions/%s"
+	URLChannelsRecipients = URLChannels + "/recipients/%s"
+	URLChannelsWebhooks = URLChannels + "/webhooks"
+
+	URLInvites = apiURL + "/invites/%s"
+
+	URLBots = apiURL + "/bots/%s"
+	URLBotsInvite = URLBots + "/invite"
+
+	URLAuth = apiURL + "/auth"
+	URLAuthAccount = URLAuth + "/account/%s"
+	URLAuthSessions = URLAuth + "/session/%s"
+
+	URLCustom = apiURL + "/custom"
+	URLCustomEmoji = URLCustom + "/emoji/%s"
+
+	URLOnboard = apiURL + "/onboard/%s"
+
+	URLSync = apiURL + "/sync/%s"
+
+	URLPush = apiURL + "/push/%s"
+}
 
 func EndpointOnboard(action string) string {
 	return fmt.Sprintf(URLOnboard, action)
